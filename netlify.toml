@@ -1,0 +1,29 @@
+# Netlify configuration for the Eucharia Emerie MBA portfolio.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 8 needs a modern Node; pin it so Netlify matches local (v22).
+  NODE_VERSION = "22"
+
+# SPA fallback. /cv is a client-side route with no file behind it, so every
+# path must return index.html or refreshing /cv would 404 in production.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Vite fingerprints asset filenames, so they can be cached indefinitely.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

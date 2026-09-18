@@ -1,0 +1,98 @@
+/* Fonts are loaded via <link rel="preconnect"> + stylesheet in index.html so they
+   start downloading in parallel with the CSS rather than after it. */
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #102A43;
+  --color-navy-deep: #0B1E30;
+  --color-ivory: #FAF9F6;
+  --color-ivory-alt: #F4F2ED;
+  --color-charcoal: #252525;
+  --color-charcoal-2: #4A4A4A;
+  --color-muted-text: #666666;
+  --color-subtle-border: #DEDDD8;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-subtle-border); border-radius: 3px; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance. Driven by a data attribute rather than timers mutating inline
+   styles, so nothing can write to an element after it unmounts. */
+.hero-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-item[data-visible='true'] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-portrait {
+  opacity: 0;
+  transform: scale(1.02);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+.hero-portrait[data-visible='true'] {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Clears the persistent mobile "Let's Connect" bar and the Home Indicator.
+   A class (not an inline style) so the desktop override can actually win. */
+.main-bottom-pad {
+  padding-bottom: max(calc(env(safe-area-inset-bottom) + 96px), 112px);
+}
+@media (min-width: 768px) {
+  .main-bottom-pad {
+    padding-bottom: 0;
+  }
+}
+
+/* Keep keyboard focus clearly visible everywhere. */
+:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-item,
+  .hero-portrait {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0s !important;
+  }
+  html { scroll-behavior: auto; }
+}

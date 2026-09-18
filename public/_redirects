@@ -1,0 +1,3 @@
+# SPA fallback (Netlify / Cloudflare Pages).
+# Without this, refreshing /cv on a static host returns 404.
+/*    /index.html   200
