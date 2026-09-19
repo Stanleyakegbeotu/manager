@@ -103,7 +103,10 @@ export default function Header({ onOpenMenu, onNavigateCV, menuOpen }: HeaderPro
             <button
               key={link.label}
               onClick={() => scrollTo(link.href)}
-              className="text-sm font-medium transition-colors duration-200 hover:text-navy"
+              // Pinned rather than using text-sm: seven links plus the logo and
+              // CTA are already tight at the md breakpoint, and the larger token
+              // would overflow the bar before lg.
+              className="text-[0.875rem] lg:text-[0.9375rem] font-medium transition-colors duration-200 hover:text-navy"
               style={{ color: '#4A4A4A' }}
             >
               {link.label}

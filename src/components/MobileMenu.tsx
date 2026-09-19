@@ -105,7 +105,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigateCV, onConnectCli
             Let's Connect
           </button>
           <div className="flex justify-center gap-6">
-            <a href={mailtoUrl} className="flex flex-col items-center gap-1 text-xs" style={{ color: '#666666' }}>
+            <a href={mailtoUrl} className="flex flex-col items-center gap-1 text-sm" style={{ color: '#666666' }}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   strokeLinecap="round"
@@ -120,7 +120,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigateCV, onConnectCli
               href={contact.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-1 text-xs"
+              className="flex flex-col items-center gap-1 text-sm"
               style={{ color: '#666666' }}
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -128,7 +128,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigateCV, onConnectCli
               </svg>
               WhatsApp
             </a>
-            <a href={telUrl} className="flex flex-col items-center gap-1 text-xs" style={{ color: '#666666' }}>
+            <a href={telUrl} className="flex flex-col items-center gap-1 text-sm" style={{ color: '#666666' }}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   strokeLinecap="round"

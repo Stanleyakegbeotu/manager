@@ -38,7 +38,7 @@ export default function CVSection({ onViewCV }: CVSectionProps) {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={onViewCV}
-                className="px-7 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:opacity-90"
+                className="px-7 py-3.5 rounded-full font-semibold text-base transition-all duration-200 hover:opacity-90"
                 style={{ backgroundColor: '#FAF9F6', color: '#102A43' }}
               >
                 View CV
@@ -50,7 +50,7 @@ export default function CVSection({ onViewCV }: CVSectionProps) {
                     onClick={() => setPopoverOpen(!popoverOpen)}
                     aria-expanded={popoverOpen}
                     aria-haspopup="menu"
-                    className="px-7 py-3.5 rounded-full font-semibold text-sm border border-white/30 text-white transition-all duration-200 hover:bg-white/10 flex items-center gap-2"
+                    className="px-7 py-3.5 rounded-full font-semibold text-base border border-white/30 text-white transition-all duration-200 hover:bg-white/10 flex items-center gap-2"
                   >
                     Download CV
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -101,7 +101,7 @@ export default function CVSection({ onViewCV }: CVSectionProps) {
                 <a
                   href={documents.pdfPath}
                   download={documents.downloadName}
-                  className="px-7 py-3.5 rounded-full font-semibold text-sm border border-white/30 text-white transition-all duration-200 hover:bg-white/10 flex items-center gap-2"
+                  className="px-7 py-3.5 rounded-full font-semibold text-base border border-white/30 text-white transition-all duration-200 hover:bg-white/10 flex items-center gap-2"
                 >
                   Download PDF
                 </a>

@@ -163,7 +163,9 @@ export default function Contact() {
     border: '1px solid #DEDDD8',
     borderRadius: '8px',
     padding: '12px 16px',
-    fontSize: '14px',
+    // 16px minimum: iOS Safari auto-zooms the page when a focused input has
+    // smaller text, which visibly jerks the layout on every field.
+    fontSize: '16px',
     color: '#252525',
     outline: 'none',
     transition: 'border-color 0.2s',
@@ -209,7 +211,7 @@ export default function Contact() {
           }}
         />
         {hasError && (
-          <p id={errorId} className="mt-1.5 text-xs" style={{ color: '#B91C1C' }}>
+          <p id={errorId} className="mt-1.5 text-sm" style={{ color: '#B91C1C' }}>
             {errors[key]}
           </p>
         )}
@@ -442,7 +444,7 @@ export default function Contact() {
                       ))}
                     </select>
                     {errors.reason && (
-                      <p id={`${reasonId}-error`} className="mt-1.5 text-xs" style={{ color: '#B91C1C' }}>
+                      <p id={`${reasonId}-error`} className="mt-1.5 text-sm" style={{ color: '#B91C1C' }}>
                         {errors.reason}
                       </p>
                     )}
@@ -478,7 +480,7 @@ export default function Contact() {
                       }}
                     />
                     {errors.message && (
-                      <p id={`${messageId}-error`} className="mt-1.5 text-xs" style={{ color: '#B91C1C' }}>
+                      <p id={`${messageId}-error`} className="mt-1.5 text-sm" style={{ color: '#B91C1C' }}>
                         {errors.message}
                       </p>
                     )}
@@ -526,7 +528,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={disabled}
-                    className="w-full flex items-center justify-center gap-2 py-4 rounded-full text-white font-semibold text-sm transition-all duration-200 hover:opacity-90 disabled:opacity-60"
+                    className="w-full flex items-center justify-center gap-2 py-4 rounded-full text-white font-semibold text-base transition-all duration-200 hover:opacity-90 disabled:opacity-60"
                     style={{ backgroundColor: '#102A43' }}
                   >
                     {disabled ? (

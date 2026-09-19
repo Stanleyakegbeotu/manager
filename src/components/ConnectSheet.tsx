@@ -148,7 +148,7 @@ export default function ConnectSheet({ isOpen, onClose, onEnquiry }: ConnectShee
                   <p className="text-sm font-semibold" style={{ color: '#252525' }}>
                     {opt.title}
                   </p>
-                  <p className="text-xs mt-0.5 truncate" style={{ color: '#666666' }}>
+                  <p className="text-sm mt-0.5 truncate" style={{ color: '#666666' }}>
                     {opt.desc}
                   </p>
                 </div>

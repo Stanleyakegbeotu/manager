@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Highlights from './components/Highlights'
@@ -33,17 +33,34 @@ export default function App() {
     if (next === page) return
     setPage(next)
     window.history.pushState({}, '', next === 'cv' ? CV_PATH : '/')
-    window.scrollTo(0, 0)
   }
 
   useEffect(() => {
-    const handlePopState = () => {
-      setPage(pageFromLocation())
-      window.scrollTo(0, 0)
+    // Stop the browser reapplying a stale scroll offset after a history
+    // navigation, which would fight the reset below.
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
     }
+
+    const handlePopState = () => setPage(pageFromLocation())
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
   }, [])
+
+  /**
+   * Every route change starts at the top.
+   *
+   * Two details matter here. It must be INSTANT: `html { scroll-behavior:
+   * smooth }` would otherwise animate the scroll, and swapping the page
+   * mid-animation leaves the visitor stranded part-way down the document.
+   * And it must run AFTER the new page renders rather than during the click
+   * handler, when the previous, much taller page is still mounted.
+   * useLayoutEffect fires after render but before paint, so no intermediate
+   * scroll position is ever visible.
+   */
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [page])
 
   /** Close the sheet, scroll to the form, then put the caret in the first field. */
   const goToEnquiryForm = () => {
@@ -119,7 +136,7 @@ export default function App() {
           <div className="px-4 pt-3 pb-1">
             <button
               onClick={() => setConnectSheetOpen(true)}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl text-white font-semibold text-sm shadow-lg transition-opacity hover:opacity-90"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl text-white font-semibold text-base shadow-lg transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#102A43' }}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

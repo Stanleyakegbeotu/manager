@@ -51,7 +51,7 @@ export default function Profile() {
             </blockquote>
             <div className="w-12 h-px mb-4" style={{ backgroundColor: '#102A43' }} />
             <p className="text-sm font-semibold" style={{ color: '#252525' }}>Eucharia Emerie MBA</p>
-            <p className="text-xs" style={{ color: '#666666' }}>Branch Manager · Silhouette Diagnostic Consultant</p>
+            <p className="text-sm" style={{ color: '#666666' }}>Branch Manager · Silhouette Diagnostic Consultant</p>
 
             {/* Key strengths */}
             <div className="mt-10 space-y-3">

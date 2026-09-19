@@ -26,7 +26,7 @@ export default function Footer({ onNavigateCV }: FooterProps) {
           <div>
             <div className="font-serif font-bold text-2xl mb-2" style={{ color: '#102A43' }}>EM</div>
             <p className="text-sm font-semibold mb-1" style={{ color: '#252525' }}>Eucharia Emerie MBA</p>
-            <p className="text-xs" style={{ color: '#666666' }}>Healthcare Operations &amp; Administration</p>
+            <p className="text-sm" style={{ color: '#666666' }}>Healthcare Operations &amp; Administration</p>
           </div>
 
           {/* Navigation */}
@@ -61,10 +61,12 @@ export default function Footer({ onNavigateCV }: FooterProps) {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8" style={{ borderTop: '1px solid #DEDDD8' }}>
-          <p className="text-xs" style={{ color: '#666666' }}>
+          <p className="text-sm" style={{ color: '#666666' }}>
             © 2026 Eucharia Emerie MBA. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: '#DEDDD8' }}>
+          {/* Was #DEDDD8, the border colour, which is close to unreadable on
+              the ivory ground. Muted but legible instead. */}
+          <p className="text-sm" style={{ color: '#666666' }}>
             References available upon request.
           </p>
         </div>

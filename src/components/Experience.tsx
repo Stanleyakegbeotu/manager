@@ -147,7 +147,7 @@ export default function Experience() {
                   {/* Indent only from lg, where the date column exists. The old
                       inline clamp() always resolved to 8.5rem, indenting mobile too. */}
                   <div className="pb-10 lg:pl-[8.5rem]">
-                    <p className="text-sm leading-relaxed mb-6" style={{ color: '#4A4A4A', maxWidth: '600px' }}>
+                    <p className="text-base leading-relaxed mb-6" style={{ color: '#4A4A4A', maxWidth: '600px' }}>
                       {job.summary}
                     </p>
                     <ul className="space-y-3">
