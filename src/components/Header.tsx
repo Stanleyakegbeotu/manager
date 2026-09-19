@@ -17,9 +17,9 @@ const navLinks = [
 ]
 
 /** Movement smaller than this is treated as jitter, not a direction change. */
-const SCROLL_DELTA = 6
-/** Above this offset the header is always shown. */
-const TOP_ZONE = 60
+const SCROLL_DELTA = 10
+/** Within this distance of the top the header is always shown. */
+const TOP_THRESHOLD = 10
 
 export default function Header({ onOpenMenu, onNavigateCV, menuOpen }: HeaderProps) {
   const [visible, setVisible] = useState(true)
@@ -34,20 +34,21 @@ export default function Header({ onOpenMenu, onNavigateCV, menuOpen }: HeaderPro
       const y = window.scrollY
       setScrolled(y > 20)
 
-      if (y < TOP_ZONE) {
+      // Near the top the header is always shown.
+      if (y <= TOP_THRESHOLD) {
         setVisible(true)
         prevY.current = y
         return
       }
 
+      // Hysteresis: prevY only advances once movement clears the threshold, so
+      // small finger jitter accumulates instead of toggling the header.
       const delta = y - prevY.current
-      // Hysteresis: ignore sub-threshold movement so the header cannot flicker.
       if (Math.abs(delta) < SCROLL_DELTA) return
 
-      // INTENTIONAL AND NON-STANDARD: visible while scrolling DOWN, hidden
-      // while scrolling UP. This is a deliberate design decision — do not
-      // "correct" it to the conventional behaviour.
-      setVisible(delta > 0)
+      // Scrolling down hides the header to free up reading space; scrolling up
+      // brings it back, since the visitor is likely reaching for the menu.
+      setVisible(delta < 0)
       prevY.current = y
     }
 
