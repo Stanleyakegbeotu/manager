@@ -21,6 +21,8 @@ export interface ContactConfig {
   phone: PhoneNumber
   secondaryPhone: PhoneNumber
   whatsappUrl: string
+  /** Public LinkedIn profile. */
+  linkedinUrl: string
 }
 
 export const contact: ContactConfig = {
@@ -49,6 +51,7 @@ export const contact: ContactConfig = {
   },
 
   whatsappUrl: 'https://wa.me/2348086106242',
+  linkedinUrl: 'https://www.linkedin.com/in/eucharia-emerie-mba/',
 }
 
 /** mailto: URL with a professional prefilled subject. */

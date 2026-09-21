@@ -5,9 +5,7 @@
  * Nothing here is invented. Education deliberately carries no award level
  * (MBA/HND/BSc) because the source document states course names only.
  *
- * The one deliberate difference from the PDF: the full residential street
- * address is NOT included. The downloadable PDF keeps it, but it must never be
- * shown on the public site, so only the city is exposed here.
+ * The source PDF lists the city only, so no street address appears anywhere.
  */
 
 export interface CVRole {
@@ -32,21 +30,22 @@ export interface CVTrainingProvider {
 }
 
 export const summary =
-  'Competent administrative professional supporting the underwriting process with effective document evaluation, report writing and file management skills. Proficient in issuing quotes, gathering details and reviewing renewal requests.'
+  'Healthcare operations and administrative professional with progressive experience across diagnostic services, branch management, medical insurance billing, patient and client service, and financial administration. Currently leads day-to-day branch operations and coordinates a multidisciplinary team of approximately 25-30 staff. Skilled in workflow coordination, staff supervision, medical billing, HMO account reconciliation, invoicing, reporting, documentation, and customer service. Recognized for clear communication, accountability, and a practical approach to improving service delivery.'
 
+/** "Core Competencies" in the source document. */
 export const skills: string[] = [
-  'Excellent communication skills, with very high proficiency in oral and written English',
-  'Excellent computer skills, especially the use of MS Office packages',
-  'Possess a strong background in planning and research',
-  'Strong leadership, interpersonal and emotional intelligence skills',
-  'Ability to provide thoughtful contributions to strategic process',
-  'Interrogative ability',
-  'Ability to listen and respond constructively to team members’ ideas',
-  'Show commitment, dedication and accountability in my work',
-  'Overseeing electronic health records',
-  'Ensuring HIPAA compliance in record keeping',
-  'Using medical billing software to submit claims and request patient payment',
-  'Managing medical billing systems',
+  'Healthcare Operations',
+  'Branch Administration',
+  'Team Leadership',
+  'Medical Billing & Coding',
+  'HMO Administration',
+  'Patient & Client Relations',
+  'Accounts Receivable & Payable',
+  'Electronic Health Records',
+  'Reporting & Documentation',
+  'Microsoft Office',
+  'Planning & Research',
+  'Customer Service',
 ]
 
 export const roles: CVRole[] = [
@@ -54,79 +53,55 @@ export const roles: CVRole[] = [
     title: 'Branch Manager',
     company: 'Silhouette Diagnostic Consultant',
     location: 'Wuse 2, Abuja',
-    period: '4/2023 - Present',
+    period: 'Apr 2023 - Present',
     current: true,
     bullets: [
-      'Oversee the day-to-day operations of the diagnostic branch.',
-      'Supervise and coordinate a team of 25 to 30 staff, ensuring effective performance, teamwork, and professional service delivery.',
-      'Oversee workflow and branch operations.',
-      'Monitor staff performance, assign duties and support staff development.',
+      'Oversee day-to-day operations of the diagnostic branch and coordinate workflow across clinical, technical, administrative, and management functions.',
+      'Supervise and coordinate a team of approximately 25-30 staff, supporting performance, teamwork, accountability, and professional service delivery.',
+      'Monitor staff performance, assign duties, and support staff development to maintain efficient branch operations.',
       'Handle patient concerns and complaints professionally while maintaining a high standard of customer service.',
-      'Maintain effective communication between clinical, technical, administrative and management teams.',
+      'Maintain effective communication between clinical, technical, administrative, and management teams.',
     ],
   },
   {
-    title: 'Medical Insurance Billing and Coding / Billing Officer',
+    title: 'Medical Insurance Billing & Coding / Billing Officer',
     company: 'Echolab',
     location: 'Wuse 2, Abuja',
-    period: '08/2019 - 2023',
+    period: 'Aug 2019 - 2023',
     bullets: [
-      'Identified, researched and resolved billing variances to maintain system accuracy and currency.',
-      'Generated and submitted invoices based upon established accounts receivable schedules and terms.',
-      'Worked with the Treasurer and assisted the Chief Financial Officer to properly apply customer remittances.',
-      'Managed efficient cash flow reporting, posted cash receipts and analysed chargebacks, independently addressing and resolving issues.',
-      'Applied more than fifty payments per month on average.',
-      'Produced, distributed and tracked more than seventy monthly invoices for the Company.',
-      'Handled high volume of in-bound calls pertaining to reconciliation of delinquent accounts.',
-      'Contacted clients with past due accounts to formulate payment plans and discuss restructuring options.',
-      'Worked effectively with medical payers such as Medicare, Medicaid and commercial insurances to obtain timely and accurate payments.',
-      'Kept vendor files accurate and up-to-date to expedite payment processing.',
-      'Entered invoices requiring payment and disbursed amounts via check, electronic transfer or bank draft.',
-      'Verified vendor accounts by reconciling monthly statements and related transactions.',
-      'Verified accuracy of accounts payable payments, reducing payment errors and check reissues.',
-      'Generated accounts payable reports for management review to aid in financial and business decision making.',
-      'Generated financial statements and reports detailing accounts receivable status.',
-      'Managed efficient and accurate processing of invoices and check requests for all the company branch locations in Nigeria.',
-      'Trained and mentored new team members and managers on accounts payable systems and policies to build cohesive groups and promote operational performance.',
-      'Promoted consistent accuracy of billing information by reconciling many HMOs and retainership accounts monthly.',
-      'Utilised talents and expertise to complete on-time and accurate monthly closing processes, journal entries and accruals.',
+      'Identified, researched, and resolved billing variances to maintain accurate and up-to-date billing records.',
+      'Generated and submitted invoices in line with established accounts-receivable schedules and payment terms.',
+      'Managed cash-flow reporting, customer remittances, chargebacks, and account reconciliations, resolving issues independently.',
+      'Handled high-volume account enquiries and worked with clients on overdue accounts, payment plans, and restructuring options.',
+      'Maintained vendor records, reconciled monthly statements, and verified accounts-payable transactions and payments.',
+      'Processed invoices and payment requests across company branch locations and produced management reports on accounts-receivable status.',
+      'Reconciled HMO and retainership accounts, supported month-end closing activities, and trained new team members and managers on accounts-payable systems and policies.',
     ],
   },
   {
-    title: 'Admin Assistant',
+    title: 'Administrative Assistant',
     company: 'Echo Lab',
     location: 'Garki, Abuja',
-    period: '06/2018 - 07/2019',
+    period: 'Jun 2018 - Jul 2019',
     bullets: [
-      'Managed office inventory by restocking supplies and placing purchase orders to maintain adequate stock levels.',
-      'Coordinated travel arrangements, including booking airfare, hotel and ground transportation.',
-      'Used MS packages to compose, edit and prepare correspondence and other department documents, including duty roster.',
-      'Maintained computers and other administrative office equipment and placed orders for materials in short supply.',
-      'Arranged conference rooms and facilities to prepare for meetings.',
-      'Identified and recommended changes to existing processes to improve accuracy, efficiency and quality service.',
-      'Welcomed office visitors warmly and alerted staff to arrivals of scheduled appointments.',
-      'Created detailed expense reports and requests for capital expenditures.',
-      'Supported efficient meetings by organising spaces and materials, documenting discussions and distributing meeting notes.',
-      'Processed invoices and expenses using MS packages to facilitate on-time payment.',
+      'Managed office inventory, restocked supplies, and coordinated purchase orders to maintain adequate stock levels.',
+      'Coordinated travel arrangements, including airfare, hotel, and ground transportation.',
+      'Prepared correspondence, duty rosters, departmental documents, meeting materials, and expense reports using Microsoft Office tools.',
+      'Supported meetings by preparing rooms and materials, documenting discussions, and distributing meeting notes.',
+      'Identified and recommended process improvements to strengthen administrative accuracy, efficiency, and service quality.',
     ],
   },
   {
     title: 'Front Desk Officer',
     company: 'Echo Scan Services',
     location: 'Garki, Abuja',
-    period: '09/2017 - 2018',
+    period: 'Sep 2017 - 2018',
     bullets: [
-      'Solicited feedback verbally to evaluate levels of client and patient satisfaction.',
-      'Verified that personal and payment information on client and patient accounts was accurate and complete.',
-      'Collaborated with various team members to ensure client and patient requests were addressed appropriately and timely.',
-      'Provided each client with information on investigation amounts of the lab upon walk-in.',
-      'Responded to customer requests via email.',
-      'Copied, logged and scanned supporting documentation.',
-      'Entered client details such as investigation, payments, account information and call logs into the computer system.',
-      'Assisted clients by answering questions, responding to inquiries and handling telephone requests.',
-      'Worked directly with departments, clients and management to achieve results.',
-      'Assisted and guided clients to their investigation rooms.',
-      'Verified data integrity and accuracy.',
+      'Supported clients and patients by answering enquiries, handling telephone requests, and providing information about investigations and charges.',
+      'Verified client information, payment details, and supporting documentation for accuracy and completeness.',
+      'Entered client investigation, payment, account, and call-log information into internal systems.',
+      'Collaborated with departments and management to ensure client requests were addressed appropriately and on time.',
+      'Collected client feedback, guided clients to investigation rooms, and supported accurate front-desk records.',
     ],
   },
 ]
@@ -139,8 +114,8 @@ export const education: CVEducation[] = [
   },
   {
     qualification: 'Business Administration and Management',
-    institution: 'Federal Polytechnic',
-    location: 'Bida, Niger',
+    institution: 'Federal Polytechnic Bida',
+    location: 'Niger',
     year: '2016',
   },
   {
@@ -153,8 +128,8 @@ export const education: CVEducation[] = [
 
 export const trainingProviders: CVTrainingProvider[] = [
   { name: 'AXA Mansard Provider Training', year: '2019' },
-  { name: 'Hygeia HMO HYProvider Training', year: '2019' },
-  { name: 'Life Action Plus HYProvider Training', year: '2020' },
+  { name: 'Hygeia HMO Provider Training', year: '2019' },
+  { name: 'Life Action Plus HMO Provider Training', year: '2020' },
   { name: 'NNPC HMO Training', year: '2020' },
   { name: 'Redcare HMO Training', year: '2020' },
   { name: 'Hallmark HMO Training', year: '2021' },
@@ -162,18 +137,23 @@ export const trainingProviders: CVTrainingProvider[] = [
   { name: 'Novo Health Africa HMO Training', year: '2021' },
 ]
 
+/** "Training focus" in the source document. */
 export const trainingSkills: string[] = [
-  'Effective at checking if a client is active',
-  'Effective at inputting client enrollee number and policy number',
-  'Generate authorization codes and approval codes',
-  'Effective generation of bills after investigation at any period',
-  'Perfect submission of bills at the start of every month',
+  'Client eligibility verification',
+  'Enrollee and policy-number administration',
+  'Authorization and approval codes',
+  'Billing generation and submission',
   'Time management and presentation skills',
-  'Basic Information Technology',
-  'Effective customer service skills',
-  'Teamwork and general workplace etiquette',
-  'Prepare invoices for CBN, DSS, NCC and other corporate organisations',
+  'Basic information technology',
+  'Customer service',
+  'Teamwork and workplace etiquette',
+  'Corporate and institutional invoicing',
 ]
 
-export const interests = 'Reading, research and writing.'
-export const references = 'Available upon request.'
+export const professionalStrengths =
+  'Communication, leadership, interpersonal skills, emotional intelligence, planning, research, accountability, and constructive teamwork.'
+
+export const systemsAndTools =
+  'Microsoft Office, electronic health records, medical billing systems, reporting and documentation tools.'
+
+export const interests = 'Reading, research, and writing.'
